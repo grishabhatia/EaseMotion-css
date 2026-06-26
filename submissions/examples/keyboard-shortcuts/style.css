@@ -1,0 +1,139 @@
+/* Keyboard Shortcuts - EaseMotion CSS Demo */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    padding: 2rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.demo-section {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s ease;
+}
+
+.demo-section:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.demo-section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.shortcut-badge {
+    display: inline-block;
+    background: #1e293b;
+    color: #f1f5f9;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.1rem 0.6rem;
+    border-radius: 0.375rem;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    letter-spacing: 0.3px;
+}
+
+.key-press-feedback {
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: none;
+    animation: fadeSlideIn 0.25s ease;
+}
+
+.key-press-feedback.show {
+    display: block;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-box {
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+    animation: scaleIn 0.25s ease;
+}
+
+.modal-box h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.modal-box p {
+    color: #475569;
+    margin: 0 0 1.5rem 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+    .demo-section {
+        padding: 1rem 1.25rem;
+    }
+    .modal-box {
+        padding: 1.5rem;
+    }
+}
